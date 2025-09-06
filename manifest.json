@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "Tab Saver",
+  "version": "1.1.0",
+  "description": "Merke Tabs und springe via Popup zurück. Auto-Repoint bei geschlossenem Tab.",
+  "permissions": ["tabs", "storage"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_title": "Saved Tabs",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icons/bookmark_icon16.png",
+    "32": "icons/bookmark_icon32.png",
+    "48": "icons/bookmark_icon48.png",
+    "128": "icons/bookmark_icon128.png"
+  }
+}
