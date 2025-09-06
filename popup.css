@@ -2,11 +2,13 @@ body { font-family: system-ui, sans-serif; margin: 0; }
 .container { padding: 10px; width: 320px; }
 .primary { width: 100%; padding: 8px 10px; border: 0; border-radius: 8px; cursor: pointer; }
 .list { list-style: none; margin: 10px 0 0; padding: 0; }
-.item { display: grid; grid-template-columns: 24px 1fr auto; gap: 8px; align-items: center; padding: 6px; border-radius: 8px; max-width: 100%; box-sizing: border-box; }
+.item { display: grid;  grid-template-columns: 24px minmax(0, 1fr) auto; /* Textspalte darf schrumpfen */ gap: 8px; align-items: center; padding: 6px; border-radius: 8px; max-width: 100%; box-sizing: border-box; }
 .item:hover { background: rgba(0,0,0,0.06); }
 .fav { width: 16px; height: 16px; }
-.title { font-size: 13px; line-height: 1.2; cursor: pointer; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
-.url { font-size: 11px; color: #555; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.title { font-size: 13px; line-height: 1.2; cursor: pointer; }
+.url { font-size: 11px; color: #555; }
+.title, .url { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; /* wichtig in Grid für Ellipsis */ }
+.text { min-width: 0; /* Wrapper um Titel+URL */ overflow: hidden; }
 .remove { border: 0; background: transparent; cursor: pointer; font-size: 14px; }
 .hidden { display: none; }
 .empty { color: #666; font-size: 13px; margin-top: 10px; text-align: center; }

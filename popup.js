@@ -30,7 +30,8 @@ function renderList(items) {
     const fav = el("img", { class: "fav", src: item.favIconUrl || "", alt: "" });
     const title = el("div", { class: "title", onclick: () => focus(item) }, item.title || "(no title)");
     const url = el("div", { class: "url" }, item.url || "");
-    const textWrap = el("div", {}, title, url);
+    // <<< Wrapper mit class "text" → greift CSS oben >>>
+    const textWrap = el("div", { class: "text" }, title, url);
     const removeBtn = el("button", { class: "remove", title: "Remove", onclick: () => remove(item) }, "✕");
     const li = el("li", { class: "item" + (item.autoRepointed ? " repointed" : "") }, fav, textWrap, removeBtn);
     listEl.appendChild(li);
